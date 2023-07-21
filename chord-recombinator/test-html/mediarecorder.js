@@ -65,8 +65,8 @@ function record(stream) {
         clipContainer.appendChild(deleteButton);
         soundClips.appendChild(clipContainer);
       
-        const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
         chunks = [];
+        const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
         const audioURL = window.URL.createObjectURL(blob);
         audio.src = audioURL;
       
