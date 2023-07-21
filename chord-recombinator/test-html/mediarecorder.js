@@ -71,9 +71,11 @@ function record(stream) {
         clipContainer.appendChild(deleteButton);
         soundClips.appendChild(clipContainer);
       
-        const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
+        const blob = new Blob(chunks, { type: "audio/mpeg; codecs=mp3" });
         const audioURL = window.URL.createObjectURL(blob);
         audio.src = audioURL;
+        // Creates file from audio blob
+        const file = new File( [ blob ], "yourfilename.mp3", { type: "audio/mpeg"} );
       
         deleteButton.onclick = (e) => {
           let evtTgt = e.target;
