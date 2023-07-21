@@ -1,7 +1,7 @@
 // Buttons
 const recBtn = document.querySelector('.record-btn')
 const playBtn = document.querySelector('.play-btn')
-const soundClips = document.querySelector('.visuals')
+const soundClips = document.querySelector('#visuals')
 
 function main() {
     // Check if mediaRecorder is supported in the current browser
