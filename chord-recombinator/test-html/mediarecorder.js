@@ -45,6 +45,12 @@ function record(stream) {
 
     });
 
+    let chunks = [];
+
+    record.ondataavailable = (e) => {
+        chunks.push(e.data);
+    };
+
     record.onstop = (e) => {
         console.log("recorder stopped");
       
@@ -65,7 +71,6 @@ function record(stream) {
         clipContainer.appendChild(deleteButton);
         soundClips.appendChild(clipContainer);
       
-        let chunks = [];
         const blob = new Blob(chunks, { type: "audio/ogg"}); // ; codecs=opus" });
         const audioURL = window.URL.createObjectURL(blob);
         audio.src = audioURL;
