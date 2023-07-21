@@ -32,8 +32,8 @@ function record(stream) {
 
     recBtn.addEventListener("click", () => {
         if (record.state == "recording") {
-            mediaRecorder.stop();
-            console.log(mediaRecorder.state);
+            record.stop();
+            console.log(record.state);
             console.log("recorder stopped");
             recBtn.style.background = "";
             recBtn.style.color = "";
@@ -45,7 +45,7 @@ function record(stream) {
 
     });
 
-    mediaRecorder.onstop = (e) => {
+    record.onstop = (e) => {
         console.log("recorder stopped");
       
         const clipName = prompt("Enter a name for your sound clip");
