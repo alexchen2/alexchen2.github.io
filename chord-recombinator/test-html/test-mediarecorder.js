@@ -12,7 +12,9 @@ function main() {
             audio: true
         })
         // Success callback
-        .then(record(stream))
+        .then((stream) => {
+            record(stream); 
+        });
 
         // Error callback
         .catch(err => {
