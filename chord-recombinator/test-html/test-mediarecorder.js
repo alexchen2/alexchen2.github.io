@@ -14,7 +14,7 @@ function main() {
         // Success callback
         .then((stream) => {
             record(stream); 
-        });
+        })
 
         // Error callback
         .catch(err => {
